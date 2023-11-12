@@ -1,11 +1,74 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}{{ question.title }}{% endblock %}
+{% block title %}
+	{{ question.title }}
+{% endblock %}
 
 {% block body %}
+	<div class="flex bg-white p-6">
+		{% include "partials/_rating.html.twig" with { rating: question.rating } %}
+		<div class="flex-grow flex flex-col">
+			<div class="mb-4 question-content flex justify-between">
+				<h3 class="text-4xl">{{ question.title }}</h3>
+				<div class="flex items-center bg-cyan-800 p-2 text-white border rounded-md">
+					<div class="flex items-center text-white">
+						<span class="material-symbols-outlined me-1">
+							live_help
+						</span>
+						Question
+					</div>
+				</div>
+			</div>
+			<hr
+			class="mb-4 border-t-2 border-gray-300">
+			<!-- Ajoutez une ligne avec une bordure -->
+			<p>{{ question.content }}</p>
+			<div>
+				{% for comment in question.comments %}
+					<div class="flex p-4 rounded-sm  border-gray-300 my-20 border-b-2 py-8">
+						{% include "partials/_rating.html.twig" with { rating: question.rating } %}
+						<div class="flex-grow flex flex-col">
+							<div class="mb-4 question-content">
+								<div class="flex items-center pb-10 py-2">
+									<img class="avatar rounded-full h-8 w-8 mr-3" src="https://randomuser.me/api/portraits/men/51.jpg" alt="Avatar">
+									<p class="clickable">Jean Louis</p>
+									<small class="ml-auto">12/12/21</small>
+								</div>
+								<p class="question-response-text">{{ comment.content }}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 
-  <h1>{{ question.title }}</h1>
-  <p>{{ question.content }}</p>
 
-{% endblock %}
+			<h3 class="text-4xl mt-8 mb-4 ">Your answer</h3>
+			<div>
+				{{ form_start(form)}}
+				{{ form_row(form.content, {'attr': {'class': 'mb-4 border border-gray-300 p-2 w-full bg-gray-50'}}) }}
+				{{ form_rest(form) }}
+				<button class="flex items-center rounded-lg bg-gray-800 hover:bg-black py-3 px-8 font-sans text-xs font-bold uppercase text-white transition-all">
+					<span class="material-symbols-outlined me-2">
+						send
+					</span>
+					Send
+				</button>
+				{{ form_end(form)}}
+			</div>
+			<div class="flex justify-center m-8">
+				<div class="flex items-center m-4 text-gray-600">
+					<span class="material-symbols-outlined me-2">
+						arrow_back
+					</span>
+					<a href="#">Previous</a>
+				</div>
+				<div class="flex items-center m-4 text-gray-600">
+					<a href="#">Next</a>
+					<span class="material-symbols-outlined ms-2">
+						arrow_forward
+					</span>
+				</div>
+			</div>
+		</div>
+	{% endblock %}

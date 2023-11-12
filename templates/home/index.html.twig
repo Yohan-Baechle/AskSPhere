@@ -4,21 +4,15 @@
 {% endblock %}
 
 {% block body %}
+	{% for cat, list in app.flashes %}
+		{% for message in list %}
+			<div class="w-full text-white bg-cyan-900 p-2 text-center mb-8">{{ message }}</div>
+		{% endfor %}
+	{% endfor %}
 	<ul class="space-y-8 bg-white">
 		{% for question in questions %}
-			<a href="{{ path('question_show', { id: question.id  }) }}" class="flex shadow-md p-4 rounded-sm border border-gray-300 hover:shadow-lg transition-all">
-				<div class="flex flex-col items-center mr-4">
-<span class="material-symbols-outlined text-gray-600">
-arrow_drop_up
-</span>
-					<p class="text-xs {{ question.rating > 0 ? 'text-green-500' : question.rating < 0 ? 'text-red-500' : '' }}">
-						{{ question.rating }}
-					</p>
-<span class="material-symbols-outlined text-gray-600">
-arrow_drop_down
-</span>
-
-				</div>
+			<a href="{{ path('question_show', { id: question.id }) }}" class="flex shadow-md p-4 rounded-sm border border-gray-300 hover:shadow-lg transition-all">
+				{% include "partials/_rating.html.twig" with { rating: question.rating } %}
 				<div class="flex-grow flex flex-col">
 					<div class="mb-4 question-content">
 						<h3 class="mb-2 text-lg font-semibold">{{ question.title }}</h3>
@@ -26,11 +20,13 @@ arrow_drop_down
 					</div>
 					<div class="flex flex-row justify-between items-center">
 						<div class="flex items-center">
-							<img class="w-8 h-8 rounded-full mr-2" src="{{ question.author.avatar }}" alt="{{ question.author.name }}"/>
-							<small class="text-blue-500 cursor-pointer">{{ question.author.name }}</small>
+							<img class="w-8 h-8 rounded-full mr-2" src="" alt="Jean Louis"/>
+							<small class="text-blue-500 cursor-pointer">Jean Louis</small>
 						</div>
 						<div class="flex items-center">
-							<i class="far fa-comment mr-2 text-gray-600"></i>
+							<span class="material-symbols-outlined me-1 text-gray-600">
+								chat
+							</span>
 							<p class="text-gray-600">{{ question.nbrOfResponse }}</p>
 						</div>
 					</div>
