@@ -2,10 +2,10 @@
   <div>
     <div class="container mx-auto flex items-center justify-between text-gray-900">
       <a
-        href="#"
+        href="{{ path('home')}}"
         class="mr-4 block cursor-pointer py-1.5 font-sans text-sm font-normal leading-normal text-inherit antialiased"
       >
-        <span>Material Tailwind</span>
+        <span>AskSphere</span>
       </a>
           <div class="max-w-md w-full">
         <label for="search" class="sr-only">Search</label>
@@ -23,13 +23,15 @@
             </div>
         </div>
     </div>
-      <button
-        class="middle none center hidden rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-        type="button"
-        data-ripple-light="true"
-      >
-        <span>Sign in</span>
-      </button>
+<button class="middle none center hidden rounded-lg bg-gradient-to-tr from-cyan-800 to-cyan-700 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block" type="button" data-ripple-light="true">
+    <div class="flex items-center">
+<span class="material-symbols-outlined">
+login
+</span>
+        <span class="ml-2">Sign in</span>
+    </div>
+</button>
+
       <button
         class="middle none relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] rounded-lg text-center font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-transparent focus:bg-transparent active:bg-transparent disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:hidden"
         data-collapse-target="navbar"

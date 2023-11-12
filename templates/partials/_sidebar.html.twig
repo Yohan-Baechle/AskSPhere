@@ -1,52 +1,47 @@
 <div class="h-[calc(100vh-8rem)] w-full max-w-[20rem] p-4 border-e-2">
-<div class="mb-2 p-4 flex justify-center items-center">
-    <a href="#">
-        <button class="rounded-lg bg-pink-500 py-3 px-8 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">
-            Ask a question
-        </button>
-    </a>
-</div>
-	<ul class="space-y-2">
+	<div class="mb-8 p-4 flex justify-center items-center">
+		<a href="{{ path('question_form') }}">
+			<button class="flex items-center rounded-lg bg-cyan-900 py-3 px-8 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">
+				<span class="material-symbols-outlined me-2">
+					contact_support
+				</span>
+				Ask a question
+			</button>
+		</a>
+	</div>
+	<ul class="space-y-6">
 		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône PresentationChartBar -->
+			<span class="material-symbols-outlined">
+				list_alt
 			</span>
-			<span class="ml-2">Dashboard</span>
-		</li>
-		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône ShoppingBag -->
-			</span>
-			<span class="ml-2">E-Commerce</span>
-		</li>
-		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône Inbox -->
-			</span>
-			<span class="ml-2">Inbox</span>
+			<span class="ml-2">Questions list</span>
 			<span class="ml-auto">
-				<span class="inline-block rounded-full bg-blue-gray text-white text-sm px-2">
+				<span class="inline-block rounded-full bg-blue-gray text-cyan-900 text-sm px-2">
 					14
 				</span>
 			</span>
 		</li>
 		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône UserCircle -->
+			<span class="material-symbols-outlined">
+				edit
 			</span>
-			<span class="ml-2">Profile</span>
+			<span class="ml-2">My questions</span>
 		</li>
 		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône Cog6Tooth -->
+			<span class="material-symbols-outlined">
+				inventory
 			</span>
-			<span class="ml-2">Settings</span>
+			<span class="ml-2">My answers</span>
 		</li>
 		<li class="flex items-center">
-			<span
-				class="flex-shrink-0 h-5 w-5"><!-- Ajoutez ici l'icône Power -->
-			</span>
-			<span class="ml-2">Log Out</span>
+			<button class="middle none center hidden rounded-lg bg-gradient-to-tr from-red-800 to-red-700 py-2 px-4 font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block" type="button" data-ripple-light="true">
+				<div class="flex items-center">
+					<span class="material-symbols-outlined">
+						logout
+					</span>
+					<span class="ml-2">Logout</span>
+				</div>
+			</button>
 		</li>
 	</ul>
 </div>

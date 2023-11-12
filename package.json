@@ -22,7 +22,6 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@material-tailwind/html": "^2.0.0",
-        "flowbite": "^2.1.1"
+        "@material-tailwind/html": "^2.0.0"
     }
 }

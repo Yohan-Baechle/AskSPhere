@@ -9,11 +9,7 @@
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		<!-- Material Icons Link -->
-		<link
-		href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
-		<!-- Font Awesome Link -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -25,10 +21,16 @@
 	<body>
 		<div class="h-screen">
 			{{ include('partials/_header.html.twig') }}
-			{{ include('partials/_sidebar.html.twig') }}
-			{{ include('partials/_footer.html.twig') }}
-			{% block body %}{% endblock %}
-		</div>
-		 <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
-	</body>
-</html>
+			<div class="bg-gray-100 flex">
+				{{ include('partials/_sidebar.html.twig') }}
+				<div class="bg-gray-50 w-full p-28">
+					<div class=""> {% block body %}{% endblock %}
+						</div>
+					</div>
+				</div>
+
+				{{ include('partials/_footer.html.twig') }}
+			</div>
+			 <script src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
+		</body>
+	</html>

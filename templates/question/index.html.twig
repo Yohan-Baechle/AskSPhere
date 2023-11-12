@@ -1,20 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello QuestionController!{% endblock %}
+{% block title %}Ask a question{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1 class="text-4xl font-extrabold mb-8">Ask a question</h1>
+    <div class="shadow-md w-full p-8 bg-white">
+        {{ form_start(form, {'attr': {'class': 'mb-8'}}) }}
+        
+        {{ form_row(form.title, {'attr': {'class': 'mb-4 border p-2 w-full'}}) }}
+        {{ form_row(form.content, {'attr': {'class': 'mb-4 border p-2 w-full'}}) }}
+        
+        {{ form_end(form) }}
+        
+        <button class="flex items-center rounded-lg bg-gray-900 py-3 px-8 font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" data-ripple-light="true">
+            <span class="material-symbols-outlined me-2">
+                send
+            </span>
+            Request an answer
+        </button>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/AskSphere/src/Controller/QuestionController.php'|file_link(0) }}">src/Controller/QuestionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/AskSphere/templates/question/index.html.twig'|file_link(0) }}">templates/question/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
